@@ -13,3 +13,14 @@ def age_limit_6plus(func: Callable[[Movie], str]) -> Callable[[Movie], str]:
         return f"Sorry, you are not old enough to watch {movie.name}!"
 
     return wrapper
+
+
+def age_limit_13plus(func: Callable[[Movie], str]) -> Callable[[Movie], str]:
+
+    @wraps(func)
+    def wrapper(movie: Movie) -> str:
+        if movie.customer_age >= 13:
+            return func(movie)
+        return f"Sorry, you are not old enough to watch {movie.name}!"
+
+    return wrapper
