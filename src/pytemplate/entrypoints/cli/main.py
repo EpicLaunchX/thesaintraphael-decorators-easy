@@ -14,7 +14,7 @@ def main():
     elif age_limit == 13:
         result = buy_ticket_for_teens(movie)
     else:
-        print("Please enter 6 or 13 for the age limit")
+        print("Invalid age limit! Please enter 6 or 13 for the age limit")
         return
 
     print(result)
